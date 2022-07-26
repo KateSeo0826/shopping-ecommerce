@@ -11,7 +11,7 @@ const H = require('just-handlebars-helpers');
 
 // Register just-handlebars-helpers with handlebars
 H.registerHelpers(Handlebars);
-//load the environmetn variable file
+//load the environment variable file
 require('dotenv').config({ path: "./config/keys.env" });
 
 //load controllers
