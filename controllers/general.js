@@ -81,7 +81,7 @@ router.post("/registration", (req, res) => {
         errorMessagesNotMatch.push("Password is not matching!")
     }
 
-    //If the user does not enter all the informatio
+    //If the user does not enter all the information
     userModel.findOne({ email: req.body.email })
         .then(isMatched => {
             if (req.body.email.length === 0) {

@@ -282,7 +282,6 @@ router.put("/update/:id", isAuthenticated, dashBoardLoader, (req, res) => {
 
 //Delete
 router.delete("/delete/:id", isAuthenticated, dashBoardLoader, (req, res) => {
-
     proAddModel.deleteOne({ _id: req.params.id })
         .then(() => {
             res.redirect("/list");
@@ -340,9 +339,7 @@ router.post("/addcart", isAuthenticated, (req, res) => {
 router.delete("/delete/", isAuthenticated, (req, res) => {
     cartModel.find()
         .then((carts) => {
-
             const allCart = carts.map(carts => {
-
                 return {
                     pName: carts.pName,
                     pPrice: carts.pPrice,
@@ -411,7 +408,6 @@ router.get("/products", (req, res) => {
 
 });
 router.post("/products", (req, res) => {
-
     proAddModel.find({ pCategory: req.body.pCategory })
         .then((task) => {
             const fitProduct = task.map(task => {
@@ -437,7 +433,6 @@ router.post("/products", (req, res) => {
 router.get("/prodetails/:id", (req, res) => {
     proAddModel.findById(req.params.id)
         .then((detail) => {
-
             const { _id, pName, pPrice, pDetails, pCategory, quantity, bestseller, proPic } = detail;
             res.render("prodetails", {
                 _id,
