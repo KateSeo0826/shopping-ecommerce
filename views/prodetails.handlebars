@@ -1,0 +1,24 @@
+<div class="container" >
+  <div class="detail-container">
+    <form method="POST" action="/addcart" enctype="multipart/form-data">
+      <input class="detail-input" id="pName" name="pName" value="{{pName}}">
+      <input class="detail-input" id="pPrice" name="pPrice" value="{{pPrice}}">
+      <input class="detail-input" id="proPic" name="proPic" value="{{proPic}}">
+      <div class="card">
+        <img src="/uploads/{{proPic}}"> <br>
+        <h3 class="card-title" name="pName" id="pName" > <b>{{pName}}</b> 
+        <p name="pPrice" id="pPrice">Price : CND ${{pPrice}}</p>
+        <p >{{pDetails}}</p>
+        <label for="state">Quantity : </label>
+        <select class="quantity" id="quantity" name="quantity">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <button type="submit"><i class="fa fa-shopping-cart"></i>Add To Cart</button>
+      </div>
+    </form>
+  </div>
+</div>

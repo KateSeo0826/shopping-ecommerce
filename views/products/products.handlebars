@@ -1,0 +1,71 @@
+<section>
+<div id="cover">
+  <form class="searchBar"action="/products" method="POST" enctype="multipart/form-data">
+    <select class="selected" name="pCategory"> <i class="fa fa-search"></i></div>
+      <option value="DigueProduct">Digue Product</option>
+      <option value="Outwear">Outwear</option>
+      <option value="Top">Top</option>
+      <option value="Dress">Dress</option>
+      <option value="Bottom">Bottom</option>
+      <option value="Acc">Acc</option>
+    </select>
+    <button type="submit"><div id="s-circle"></div><span></span></button>
+  </form>
+</div>
+</section>
+  <div class = "container" > 
+    <div class="products-container">
+    {{#each productAll}}
+    {{!-- {{#if (neq this.pCategory 'For Main')}} --}}
+      <div class="card">
+        <img src="/uploads/{{proPic}}" class="card-img-top">
+        <p> <b> {{this.pName}}  </b></p>
+        <p> CND ${{this.pPrice}}</p>
+        <button><a href="/prodetails/{{this.id}}"><i class="fa fa-info-circle">Details</i></a></button>
+      </div>
+    {{!-- {{/if}} --}}
+    {{/each}}
+    </div>
+    <div class="products-container">
+    {{#each search}}
+    {{!-- {{#if (neq this.pCategory 'For Main')}} --}}
+      <div class="card">
+        <img src="/uploads/{{proPic}}">
+        <p>{{this.pName}}</p>
+        <p>Price : CND ${{this.pPrice}}</p>
+        <button class="btn"><a href="/prodetails/{{this.id}}"><i class="fa fa-info-circle">Details</i></a></button>
+      </div>
+    {{!-- {{/if}} --}}
+    {{/each}}
+    </div>
+  </div>
+
+
+{{!-- 
+
+<style>
+button span{
+    position: absolute;
+    bottom: 100px;
+    left: 760px;
+    display: block;
+    width: 30px;
+    height: 10px;
+    background-color: transparent;
+    border-radius: 10px;
+    transform: rotateZ(52deg);
+    transition: 0.5s ease all;
+}
+button span:before, button span:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    transform: rotateZ(0);
+    transition: 0.5s ease all;
+}
+</style> --}}

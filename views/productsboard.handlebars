@@ -1,0 +1,24 @@
+<div class="board-container">
+    <div class="side-nav-container">
+     <ul>
+       <li><a href="/list">All Products</a></li>
+       <li><a href="/productsadd">Product Add</a></li>
+       <li><a href="/list">Product Edit & Delete</a></li>
+    </ul>
+    </div>
+    <div class="products-container">
+    {{#each products}}
+    {{#if (neq this.pCategory 'For Main')}}
+        <div class="card">
+            <img src="/uploads/{{proPic}}" class="card-img-top">
+            <h4 class="card-title">{{this.pName}}</h4>
+            <p>Category: {{this.pCategory}}</p>
+            <p>Quantity: {{this.quantity}}</p>
+            <p> Price: CAD {{this.pPrice}} </p>
+            <a href="/edit/{{this.id}}" class="edit-delete-button">Edit</a>
+            <a href="/delete/{{this.id}}?method=DELETE" class="edit-delete-button">Delete</a>
+        </div>
+    {{/if}}
+    {{/each}}
+    </div>
+</div>

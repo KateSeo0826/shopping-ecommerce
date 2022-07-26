@@ -1,0 +1,65 @@
+<div class="add-container">
+   <div class="side-nav-container" >
+      <ul>
+        <li><a href="/list">All Products</a></li> 
+        <li><a href="/productsAdd">Product Add</a></li>
+        <li><a href="/products">Product Edit & Delete</a></li>
+      </ul>
+  </div>
+      <div class="add-right-container">
+        <h2>Update Products</h2>
+        <form method="POST" action="/update/{{_id}}?method=PUT" enctype="multipart/form-data">
+        <div class="row">
+              <label for="pName"><i class="fa fa-user"></i>Product name</label>
+              <input type="text" id="pName" name="pName" value="{{pName}}">
+              
+              <label for="pPrice"><i class="fa fa-envelope"></i>Product price</label>
+              <input type="text" id="pPrice" name="pPrice" value="{{pPrice}}">
+              
+              <label for="pCategory"><i class="fa fa-address-card-o"></i>Product category</label>
+              <select class="pCategory" id="pCategory" name="pCategory">
+                <option value="Outwear" {{#if (eq type 'Outwear')}} selected
+                {{/if}}>Outwear</option>
+                <option value="Top" {{#if (eq type 'Top')}} selected
+                {{/if}}>Top</option>
+                <option value="Dress" {{#if (eq type 'Dress')}} selected 
+                {{/if}}>Dress</option>
+                <option value="Bottom" {{#if (eq type 'Bottom')}} selected 
+                {{/if}}>Bottom
+                </option>
+                <option value="Acc" {{#if (eq type 'Acc')}} selected 
+                {{/if}}>Acc
+                </option>
+                <option value="For Main" {{#if (eq type 'For Main')}} selected {{/if}}>For Main </option>
+              </select>
+                <label for="state">Product quantity</label>
+                <select class="quantity" id="quantity" name="quantity">
+                  <option value="1" {{#if (eq type '1')}} selected {{/if}}>1</option>
+                  <option value="2" {{#if (eq type '2')}} selected {{/if}}>2</option>
+                  <option value="3" {{#if (eq type '3')}} selected {{/if}}>3</option>
+                  <option value="4" {{#if (eq type '4')}} selected {{/if}}>4</option>
+                  <option value="5" {{#if (eq type '5')}} selected {{/if}}>5</option>
+                  <option value="6" {{#if (eq type '6')}} selected {{/if}}>6</option>
+                  <option value="7" {{#if (eq type '7')}} selected {{/if}}>7</option>
+                  <option value="8" {{#if (eq type '8')}} selected {{/if}}>8</option>
+                </select>
+
+                <label for="products">Set product as a Bestseller product (or not)</label>
+                <select class="bestseller" id="bestseller" name="bestseller">
+                  <option value="Yes" {{#if (eq type 'Yes')}} selected {{/if}}>Yes</option>
+                  <option value="No" {{#if (eq type 'No')}} selected {{/if}}>No</option>
+                </select>
+              
+                <label type="text" id="pDetails" name="pDetails"> Product description</label>
+                <textarea type="text" id="pDetails" name="pDetails">{{pDetails}}</textarea>
+                
+                <label>Upload a photo of the product </label>
+                <input type="file" name="proPic" id="proPic" accept="image/*" value="/uploads/{{proPic}}"> <br><br>
+                <input class="btn" type="submit" value="Update Products">
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+   

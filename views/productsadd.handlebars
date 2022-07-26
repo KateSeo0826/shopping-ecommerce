@@ -1,0 +1,55 @@
+<div class="add-container">
+  <div class="side-nav-container" >
+      <ul>
+        <li><a href="/list">All Products</a></li> 
+        <li><a href="/productsadd">Product Add</a></li>
+        <li><a href="/productsadd">Product Edit & Delete</a></li>
+      </ul>
+  </div>
+  <div class="add-right-container">
+    <form action="/productsadd" method="POST" enctype="multipart/form-data">
+      <h2>ADD TO Product</h2>
+      <div class="row">
+        <label for="pName"><i class="fa fa-user"></i>Product name</label>
+        <input type="text" id="pName" name="pName">
+
+        <label for="pPrice"><i class="fa fa-envelope"></i>Product price</label>
+        <input type="text" id="pPrice" name="pPrice">
+
+        <label for="pCategory"><i class="fa fa-address-card-o"></i>Product category</label>
+        <select class="pCategory" id="pCategory" name="pCategory">
+          <option value="Outwear">Outwear</option>
+          <option value="Top">Top</option>
+          <option value="Dress">Dress</option>
+          <option value="Bottom">Bottom</option>
+          <option value="Acc">Acc</option>
+          <option value="For Main">For Main </option>
+        </select>
+
+        <label for="state">Product quantity</label>
+          <select class="quantity" id="quantity" name="quantity">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
+
+        <label for="products">Bestseller product (or not)</label>
+          <select class="bestseller" id="bestseller" name ="bestseller">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+
+          <label type="text" id="pDetails" name="pDetails"> Product description </label>
+          <textarea type="text" id="pDetails" name="pDetails"></textarea>
+            
+          <label>Upload a photo of the product </label>
+          <input type="file" name="proPic" id="proPic" accept="image/*"> <br><br>
+          <input class="btn" type="submit" value="Add To Product">
+        </div>
+      </form>
+  </div>
+</div>

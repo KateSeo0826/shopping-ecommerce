@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>{{title}}</title>
+</head>
+<header>
+    <div class="container">
+      <div class="title">
+            <h1 class="title"><a href="/">DIGUE</a></h1>
+      </div>
+      <nav class="nav-container">
+            {{#if (eq user.type 'user') }}
+               <div class="nav-left">
+            <li><a href="/products">Digue Product</a></li>
+            <li><a href="/outwear">Outwear</a></li>
+            <li><a href="/top">Top</a></li>
+            <li><a href="/dress">Dress</a></li>
+            <li><a href="/bottom">Bottom</a></li>
+            <li><a href="/acc">Acc</a></li>
+            </div>
+            <div class="nav-right">
+            <li><a href="/logout"> <i class="fa fa-sign-out"></i>Logout </a></li>
+            <li> <a href="/addcart"><i class="fa fa-cart-arrow-down"></i> Shopping Cart</a> <h3>{{cartsAdd.totalquan}}</h3></li>
+            </div>
+            {{else if (eq user.type 'Admin') }}
+            <div class="nav-right">
+            <li><a href="/admin"> <i class="fa fa-wrench"></i> Administrator</a></li>
+            <li><a href="/products"><i class="fa fa-product-hunt"></i> Products</a></li>
+            <li><a href="/logout"> <i class="fa fa-sign-out"></i>Logout </a></li>
+            </div>
+            {{else}}
+            <div class="nav-left">
+            <li><a href="/products">Digue Product</a></li>
+            <li><a href="/outwear">Outwear</a></li>
+            <li><a href="/top">Top</a></li>
+            <li><a href="/dress">Dress</a></li>
+            <li><a href="/bottom">Bottom</a></li>
+            <li><a href="/acc">Acc</a></li>
+            </div>
+           <div class="nav-right"> 
+            <li><a href="/login"> <i class="fa fa-sign-in"></i>Login</a></li>
+            <li><a href="/registration"> <i class="fa fa-user-plus"></i>Sign Up</a></li>
+            </div>
+            {{/if}}
+        </nav>
+      </div>
+        </header>
+    <div class="container">
+        {{{body}}}
+    </div>
+    <footer class="container">
+            <div class="footer"> 
+                <i class="fa fa-twitter-square"></i> 
+                <i class="fa fa-facebook"></i> 
+                <i class="fa fa-instagram"></i> 
+                <i class="fa fa-github-square"></i> 
+                <span>Kate Seo</span>
+            </div>
+    </footer>
+</html>

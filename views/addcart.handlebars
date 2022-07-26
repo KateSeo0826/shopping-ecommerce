@@ -1,0 +1,26 @@
+<div class="container" >
+    {{#if cartsAdd}}
+    <hr>
+    <div class="cart-container" action="/addcart" enctype="multipart/form-data">
+        {{#each cartsAdd}}
+        <div class="card">
+            <img src="/uploads/{{proPic}}">
+            <p>{{this.pName}}</p>
+            <p>Quantity : {{this.quantity}}<p>
+            <p>Price : CAD ${{this.pPrice}}</p>
+            <button><i class="fa fa-trash" aria-hidden="true"></i> <a href="/delete/{{this.id}}?method=DELETE"></a></button>
+        </div>
+        {{/each}}
+    </div>
+    <hr>
+    <div class="order-box">
+        <span>Total : CAD$ </span> {{totalprice}} <span> TotalQan : {{totalquan}} </span> <span> EA </span>
+        <a href="/delete/?method=DELETE" class="submit-btn">Place your Order</a>
+    </div>
+    <hr>
+       {{else}}
+        <div>
+            <img src="/img/cart.png" >
+        </div>
+       {{/if}}
+</div>

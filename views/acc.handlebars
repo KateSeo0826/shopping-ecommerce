@@ -1,0 +1,12 @@
+<div class="container">
+     {{#each pAcc}}
+  <div class="products-container">
+      <div class="card">
+        <img src="/uploads/{{proPic}}" class="card-img-top">
+          <h5 class="card-title"> <b>{{this.pName}}</b>
+          <p class="card-text"> CND ${{this.pPrice}}</p>
+          <button class = "btn"><a href="/prodetails/{{this.id}}"><i class="fa fa-info-circle">Details</i></a></button>
+      </div>
+     {{/each}}
+  </div>
+</div>
