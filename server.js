@@ -72,7 +72,7 @@ mongoose.connect(process.env.MONGO_DB_CONNECTION_STRING, { useNewUrlParser: true
     .then(() => {
         console.log(`Connected to MongoDB Database`);
     })
-    .catch(err => console.log(`Error occured when connection to database ${err}`));
+    .catch(err => console.log(`Error occurred when connection to database ${err}`));
 
 //sets up server
 
