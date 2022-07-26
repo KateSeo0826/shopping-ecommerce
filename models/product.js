@@ -48,6 +48,6 @@ const proAddSchema = new Schema({
   The model will allow you to perform CRUD operations on a given collection!!! 
 */
 
-const proAddModel = mongoose.model('products', proAddSchema);
+const proAddModel = mongoose.model('product', proAddSchema);
 
 module.exports = proAddModel;
