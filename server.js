@@ -52,7 +52,7 @@ app.use(session({
     secret: `${process.env.SECRET_KEY}`,
     resave: false,
     saveUninitialized: true,
-    store: new MongoStore({ mongooseConnection: mongoose.MONGO_DB_CONNECTION_STRING }),
+    // store: new MongoStore({ mongooseConnection: mongoose.MONGO_DB_CONNECTION_STRING }),
     cookie: { maxAge: 180 * 60 * 1000 }
 }))
 
