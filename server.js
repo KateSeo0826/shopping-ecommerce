@@ -31,7 +31,7 @@ app.use(express.static("public/img"));
 
 
 //Handlebars middleware(This tells Express to set handlebars as the template engine)
-app.engine('handlebars', exphbs());
+app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
 
 app.use((req, res, next) => {
