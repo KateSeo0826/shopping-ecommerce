@@ -52,16 +52,14 @@ app.use(session({
     secret: `${process.env.SECRET_KEY}`,
     resave: false,
     saveUninitialized: true,
-    // store: new MongoStore({ mongooseConnection: mongoose.MONGO_DB_CONNECTION_STRING }),
+    store: new MongoStore({ mongooseConnection: mongoose.MONGO_DB_CONNECTION_STRING }),
     cookie: { maxAge: 180 * 60 * 1000 }
-
 }))
 
 app.use((req, res, next) => {
     res.locals.user = req.session.userInfo;
     next();
 })
-
 
 //map each controller to the app object
 app.use("/", generalController);
