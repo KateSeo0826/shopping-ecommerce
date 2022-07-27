@@ -1,6 +1,7 @@
 <section>
-<div id="cover">
-  <form class="searchBar"action="/products" method="POST" enctype="multipart/form-data">
+<div class="searchBar-container">
+  <form class="searchBar" action="/products" method="POST" enctype="multipart/form-data">
+  <div class="selected-box">
     <select class="selected" name="pCategory"> <i class="fa fa-search"></i></div>
       <option value="DigueProduct">Digue Product</option>
       <option value="Outwear">Outwear</option>
@@ -9,8 +10,11 @@
       <option value="Bottom">Bottom</option>
       <option value="Acc">Acc</option>
     </select>
-    <button type="submit"><div id="s-circle"></div><span></span></button>
-  </form>
+  </div>
+  <div class="button-box">
+    <button class="searchBar-button" type="submit"><i class="fa fa-search"></i></button>
+  </div>
+</form>
 </div>
 </section>
   <div class = "container" > 

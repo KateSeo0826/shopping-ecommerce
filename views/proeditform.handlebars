@@ -18,6 +18,8 @@
               
               <label for="pCategory"><i class="fa fa-address-card-o"></i>Product category</label>
               <select class="pCategory" id="pCategory" name="pCategory">
+                <option value="DigueProduct" {{#if (eq type 'DigueProduct')}} selected
+                {{/if}}>DigueProduct</option>
                 <option value="Outwear" {{#if (eq type 'Outwear')}} selected
                 {{/if}}>Outwear</option>
                 <option value="Top" {{#if (eq type 'Top')}} selected

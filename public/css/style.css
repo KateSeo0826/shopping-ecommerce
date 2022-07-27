@@ -178,10 +178,10 @@ li{
   background-color: #ffffff;
   font-size: 18px;
 }
-button i{
+/* button i{
   font-size: 28px;
   margin-right: 0.5em;
-}
+} */
 .footer {
   height: 10vh;
   font-family:'Roboto', sans-serif;
@@ -206,10 +206,7 @@ hr {
   border: 1px solid #f1f1f1;
   margin-bottom: 20px;
 }
-button:hover,
-a:hover {
-  opacity: 0.7;
-}
+
 /* registration & sign in css -------------------------------------------- */
 .main div {
   font-size: small;
@@ -402,81 +399,44 @@ input:focus {
   margin: 0px; 
 }
 /*Products search Bar*/
-#cover {
-  margin: 0 auto;
+.searchBar-container form{
+  display:flex;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
 }
-.searchBar input, button{
-    color: #fff;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    background-color: transparent;
+.searchBar{
+  margin: 0;
 }
-.searchBar .selected{
-    position: relative;
-    top: 10%;
-    left: 10px;
-    right: 0;
-    width: 545px;
-    padding: 25px;
-    margin: 0 auto;
-    background-color: #ff7575;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px #ff7c7c, 0 0 0 20px #ffffffeb;
-    transform: scale(0.6);
+.selected-box{
+  width: 370px;
 }
-.searchBar input[type="text"]::placeholder{
-    color: #e16868;
+.selected{
+  width: 450px;
+  margin-left: 40px;
+  padding: 20px;
+  border-color: #b1d3c5;
+  background-color:#E1F1E7;
+  border-radius: 8px 0px 0px 8px;
+  box-shadow: 0 5px 10px #E1F1E7;
+  transform: scale(0.6);
 }
-.searchBar button{
-    position: relative;
-    display: block;
-    width: 84px;
-    height: 96px;
-    cursor: pointer;
+.button-box{
+  margin: 0;
 }
-#s-circle{
-    position: relative;
-    bottom: 90px;
-    left: 737px;
-    width: 35px;
-    height: 35px;
-    margin-top: 0;
-    border-width: 15px;
-    border: 15px solid #fff;
-    background-color: transparent;
-    border-radius: 50%;
-    transition: 0.5s ease all;
+.searchBar-button{
+  border-width: 0.5px;
+  border-left: 0px solid transparent;
+  border-style: solid;
+  border-color: #b1d3c5;
+  color:black;
+  font-size: 1.5em;
+  padding: 16px;
+  background-color: #E1F1E7;
+  border-radius: 0px 8px 8px 0px;
+  box-shadow: 0 5px 90px #E1F1E7;
+  transform: scale(0.6);
 }
-#s-cover:hover #s-circle{
-    top: -1px;
-    width: 67px;
-    height: 15px;
-    border-width: 0;
-    background-color: #fff;
-    border-radius: 20px;
-}
-#s-cover:hover span{
-    top: 50%;
-    left: 56px;
-    width: 25px;
-    margin-top: -9px;
-    transform: rotateZ(0);
-}
-#s-cover:hover button span:before{
-    bottom: 11px;
-    transform: rotateZ(52deg);
-}
-#s-cover:hover button span:after{
-    bottom: -11px;
-    transform: rotateZ(-52deg);
-}
-#s-cover:hover button span:before, #s-cover:hover button span:after{
-    right: -6px;
-    width: 40px;
-    background-color: #fff;
-}
-
 /*Details*/
 .detail-input{
 display: none;

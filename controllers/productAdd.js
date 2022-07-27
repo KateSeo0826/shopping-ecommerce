@@ -94,7 +94,7 @@ router.get("/list", isAuthenticated, dashBoardLoader, (req, res) => {
 // router.get("/description",isAuthenticated,(req,res)=>{
 
 router.get("/digueProduct", (req, res) => {
-    proAddModel.find({ pCategory: "Digue Product" })
+    proAddModel.find({ pCategory: "DigueProduct" })
         .then((tasks) => {
             const digueProduct = tasks.map(task => {
                 return {

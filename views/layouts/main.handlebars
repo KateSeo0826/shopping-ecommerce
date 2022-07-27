@@ -13,13 +13,14 @@
       </div>
       <nav class="nav-container">
             {{#if (eq user.type 'user') }}
-               <div class="nav-left">
-            <li><a href="/products">Digue Product</a></li>
+            <div class="nav-left">
+            <li><a href="/digueProduct">Digue Product</a></li>
             <li><a href="/outwear">Outwear</a></li>
             <li><a href="/top">Top</a></li>
             <li><a href="/dress">Dress</a></li>
             <li><a href="/bottom">Bottom</a></li>
             <li><a href="/acc">Acc</a></li>
+            <li><a href="/products"><i class="fa fa-product-hunt"></i>All Products</a></li>
             </div>
             <div class="nav-right">
             <li><a href="/logout"> <i class="fa fa-sign-out"></i>Logout </a></li>
@@ -33,12 +34,13 @@
             </div>
             {{else}}
             <div class="nav-left">
-            <li><a href="/products">Digue Product</a></li>
+            <li><a href="/digueProduct">Digue Product</a></li>
             <li><a href="/outwear">Outwear</a></li>
             <li><a href="/top">Top</a></li>
             <li><a href="/dress">Dress</a></li>
             <li><a href="/bottom">Bottom</a></li>
             <li><a href="/acc">Acc</a></li>
+            <li><a href="/products"><i class="fa fa-product-hunt"></i>All Products</a></li>
             </div>
            <div class="nav-right"> 
             <li><a href="/login"> <i class="fa fa-sign-in"></i>Login</a></li>

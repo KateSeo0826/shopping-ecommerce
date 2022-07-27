@@ -16,7 +16,7 @@ require('dotenv').config({ path: "./config/keys.env" });
 
 //load controllers
 const generalController = require("./controllers/general");
-const productController2 = require("./controllers/productAdd");
+const productController = require("./controllers/productAdd");
 
 //creation of app object
 const app = express();
@@ -63,7 +63,7 @@ app.use((req, res, next) => {
 
 //map each controller to the app object
 app.use("/", generalController);
-app.use("/", productController2);
+app.use("/", productController);
 
 
 
