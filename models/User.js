@@ -7,18 +7,14 @@ const userSchema = new Schema({
     name:
     {
         type: String,
-
     },
-
     email:
     {
         type: String,
-
     },
     password:
     {
         type: String,
-
     },
     type:
     {
@@ -40,9 +36,9 @@ userSchema.pre("save", function (next) {
                     this.password = encryptPassword;
                     next();
                 })
-                .catch(err => console.log(`Error occured when hasing ${err}`));
+                .catch(err => console.log(`Error occurred when having ${err}`));
         })
-        .catch(err => console.log(`Error occured when salting ${err}`));
+        .catch(err => console.log(`Error occurred when salting ${err}`));
 
 
 

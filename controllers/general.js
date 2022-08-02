@@ -135,26 +135,26 @@ router.post("/registration", (req, res) => {
             }
 
             else if (req.body.password.length != 0 && req.body.pswre != 0 && req.body.password == req.body.pswre && req.body.name && req.body.email) {
-                const { name, email } = req.body;
-                const sgMail = require('@sendgrid/mail');
-                sgMail.setApiKey(process.env.SEND_GRID_API_KEY);
-                const msg = {
-                    to: `${email}`,
-                    from: `violetds0826@gmail.com`,
-                    subject: `Registration Form Submit`,
-                    html:
-                        `visitor's Full Name : ${name} <br>
-                             Visitor's Email Address : ${email} <br>
-                        `
-                };
-                //Asynchronous operation(who don't know how long  this will take to execute)
-                sgMail.send(msg)
-                    .then(() => {
-                        res.redirect("/login");
-                    })
-                    .catch(err => {
-                        console.log(`Error ${err}`);
-                    });
+                // const { name, email } = req.body;
+                // const sgMail = require('@sendgrid/mail');
+                // sgMail.setApiKey(process.env.SEND_GRID_API_KEY);
+                // const msg = {
+                //     to: `${email}`,
+                //     from: `violetds0826@gmail.com`,
+                //     subject: `Registration Form Submit`,
+                //     html:
+                //         `visitor's Full Name : ${name} <br>
+                //          Visitor's Email Address : ${email} <br>
+                //         `
+                // };
+                // //Asynchronous operation(who don't know how long  this will take to execute)
+                // sgMail.send(msg)
+                //     .then(() => {
+                //         res.redirect("/login");
+                //     })
+                //     .catch(err => {
+                //         console.log(`Error ${err}`);
+                //     });
                 const newUser =
                 {
                     name: req.body.name,
@@ -163,7 +163,9 @@ router.post("/registration", (req, res) => {
                 }
                 const user = new userModel(newUser);
                 user.save()
-                    .then(() => { })
+                    .then(() => {
+                        res.redirect("/login")
+                    })
                     .catch(err => console.log(`Error while inserting into the data ${err}`));
             }
         })
@@ -196,7 +198,7 @@ router.post("/login", (req, res) => {
         errorMessaPassword.push("You must enter your password");
     }
 
-    //If the user does not enter all the informatio
+    //If the user does not enter all the information
     if (errorMessaEmail.length > 0 ||
         errorMessaPassword.length > 0) {
         res.render("general/login", {
@@ -221,7 +223,7 @@ router.post("/login", (req, res) => {
                     bcrypt.compare(req.body.password, user.password)
                         .then(isMatched => {
                             if (isMatched) {
-                                //cretae our sessoin
+                                //create our session
                                 req.session.userInfo = user;
                                 if (user.type == "user") {
                                     res.redirect("/userdashboard");
